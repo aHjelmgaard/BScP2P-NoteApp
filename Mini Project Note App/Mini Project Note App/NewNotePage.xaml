@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mini_Project_Note_App.NewNotePage"
+             Title="NewNotePage">
+
+    <ScrollView
+    VerticalOptions="FillAndExpand">
+
+        <VerticalStackLayout
+    Background="#1f1f1f"
+    Padding="24"
+    Spacing="16"
+    x:Name="svniHome"
+    VerticalOptions="Fill"
+    HorizontalOptions="CenterAndExpand">
+
+            <VerticalStackLayout
+            Background="#00a3e0"
+            Spacing="0"
+            Padding="24"
+            x:Name="note1Open"
+            VerticalOptions="FillAndExpand"
+            WidthRequest="331">
+
+                <Entry
+                x:Name="newNoteTitle"
+                Placeholder="Insert title"
+                HorizontalOptions="FillAndExpand"/>
+
+                <Editor
+                x:Name="newNoteText"
+                Placeholder="Insert text"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"/>
+
+                <HorizontalStackLayout>
+                    <Button Text="Back" Clicked="Back_Clicked" />
+                    <Button Text="Delete" Clicked="Delete_Clicked" />
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+    
+</ContentPage>

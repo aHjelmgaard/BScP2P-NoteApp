@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mini_Project_Note_App.HomePage"
+             Title="HomePage">
+    
+    <ScrollView
+        VerticalOptions="FillAndExpand">
+        
+        <VerticalStackLayout
+            Background="#1f1f1f"
+            Padding="24"
+            Spacing="16"
+            x:Name="svniHome"
+            VerticalOptions="Fill"
+            HorizontalOptions="CenterAndExpand">
+
+            <!--#region Title-->
+            
+            <Label
+                FontAttributes="Bold"
+                FontAutoScalingEnabled="false"
+                FontSize="48"
+                Text="PRIVATE THOUGHTS"
+                TextColor="#ffffff"
+                x:Name="privateThoughts"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"/>
+            
+            <!--#endregion Title-->
+
+            <!--#region Buttons-->
+
+            <HorizontalStackLayout
+                HorizontalOptions="CenterAndExpand">
+                <Button Text="Uni" Clicked="Uni_Clicked"/>
+                <Button Text="To-do" Clicked="Todo_Clicked"/>
+                <Button Text="All" Clicked="All_Clicked"/>
+            </HorizontalStackLayout>
+
+            <!--#endregion Buttons-->
+
+            <!--#region Body-->
+
+            <!--#region Top-->
+
+            <HorizontalStackLayout
+            Spacing="10"
+            x:Name="notes2"
+            HeightRequest="240"
+            WidthRequest="327"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill">
+                <VerticalStackLayout
+                Background="#ddefe8"
+                Spacing="10"
+                x:Name="note1"
+                HeightRequest="240"
+                WidthRequest="160">
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapped"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                    <Label
+                    FontAttributes="Bold"
+                    FontAutoScalingEnabled="false"
+                    FontSize="20"
+                    Text="GROCERIES"
+                    x:Name="groceries"
+                    HeightRequest="24"
+                    WidthRequest="140"/>
+                    <ListView x:Name="itemListView">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout
+                Background="#a0dcff"
+                Spacing="10"
+                Padding="10"
+                x:Name="note2"
+                HeightRequest="240"
+                WidthRequest="160">
+                    <Label Text="New Note"/>
+                    
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNewNoteTapped"/>
+                    </HorizontalStackLayout.GestureRecognizers>
+                    
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+
+            <!--#endregion Top-->
+            
+            <!--#region Middle-->
+
+            <VerticalStackLayout
+                Background="#e3e48d"
+                Spacing="10"
+                x:Name="note3"
+                HeightRequest="80"
+                WidthRequest="330"/>
+            
+            <!--#endregion Middle-->
+            
+            <!--#region Bottom-->
+
+            <HorizontalStackLayout
+                Spacing="10"
+                x:Name="notes"
+                HeightRequest="240"
+                WidthRequest="330">
+                <HorizontalStackLayout
+                    Background="#9dd4cf"
+                    Spacing="10"
+                    x:Name="note5"
+                    HeightRequest="240"
+                    WidthRequest="160"/>
+                <HorizontalStackLayout
+                    Background="#62b5e5"
+                    Spacing="10"
+                    x:Name="note4"
+                    HeightRequest="240"
+                    WidthRequest="160"/>
+            </HorizontalStackLayout>
+            
+            <!--#endregion Bottom-->
+
+            <!--#endregion Body-->
+            
+        </VerticalStackLayout>
+        
+    </ScrollView>
+    
+</ContentPage>
